@@ -4,6 +4,7 @@ on:
   pull_request:
     types:
       - ready_for_review
+      - synchronize
 
 jobs:
   my_job_name: # You can replace 'my_job_name' with a suitable name for your job.
