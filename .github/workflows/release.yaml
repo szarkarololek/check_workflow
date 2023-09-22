@@ -1,4 +1,4 @@
-name: Action Name
+name: My Workflow
 
 on:
   pull_request:
@@ -7,12 +7,13 @@ on:
       - synchronize
 
 jobs:
-  my_job_name: # You can replace 'my_job_name' with a suitable name for your job.
+  my_job:
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Echo tests
-      run: echo "tests"
+    - name: My Step
+      run: echo "Running my steps..."
